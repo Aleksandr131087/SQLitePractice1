@@ -9,10 +9,13 @@ import android.widget.EditText
 import android.widget.ListView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var toolbar: Toolbar
     private lateinit var dbHelper: DatabaseHelper
     private lateinit var productListView: ListView
     private lateinit var productName: EditText
@@ -30,7 +33,9 @@ class MainActivity : AppCompatActivity() {
         productWeight = findViewById(R.id.productWeight)
         productPrice = findViewById(R.id.productPrice)
         saveButton = findViewById(R.id.saveButton)
-
+        toolbar = findViewById(R.id.toolbar)
+        setSupportActionBar(toolbar)
+        title = "Чек покупок"
         saveButton.setOnClickListener {
             val name = productName.text.toString()
             val weight = productWeight.text.toString().toDoubleOrNull() ?: 0.0

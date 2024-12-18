@@ -7,10 +7,12 @@
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
+        android:layout_height="wrap_content"
         android:background="?attr/colorPrimary"
         android:title="Чек покупок"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"/>
+        />
+
+
 
     <EditText
         android:id="@+id/productName"
